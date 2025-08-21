@@ -22,7 +22,7 @@ app = FastAPI(title="Ink & Soul Tattoo AI Generator API")
 # --- CORS Configuration (Allows frontend to talk to backend) ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # For production, restrict this to your actual frontend domain
+    allow_origins=["https://tatoo-frontend-git-main-jithin-jis-projects.vercel.app"],  # For production, restrict this to your actual frontend domain
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
