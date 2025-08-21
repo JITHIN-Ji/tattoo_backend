@@ -6,8 +6,8 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-import google.generativeai as genai
-
+from google import genai
+from google.genai import types
 from PIL import Image
 from io import BytesIO
 import webcolors
@@ -22,7 +22,7 @@ app = FastAPI(title="Ink & Soul Tattoo AI Generator API")
 # --- CORS Configuration (Allows frontend to talk to backend) ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://tatoo-frontend-142t.vercel.app/"],  # For production, restrict this to your actual frontend domain
+    allow_origins=["*"],  # For production, restrict this to your actual frontend domain
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
